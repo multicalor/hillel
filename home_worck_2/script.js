@@ -19,11 +19,11 @@ console.log("Calculations are finished!");
 // Sum
 console.log(`Sum: ${firstOperand} + ${secondOperand} = ${firstOperand + secondOperand}`);
 // Diff
-console.log(`Sum: ${firstOperand} - ${secondOperand} = ${firstOperand - secondOperand}`);
+console.log(`Diff: ${firstOperand} - ${secondOperand} = ${firstOperand - secondOperand}`);
 // Mult
-console.log(`Sum: ${firstOperand} * ${secondOperand} = ${firstOperand * secondOperand}`);
+console.log(`Mult: ${firstOperand} * ${secondOperand} = ${firstOperand * secondOperand}`);
 // Div
-console.log(`Sum: ${firstOperand} / ${secondOperand} = ${firstOperand / secondOperand}`);
+console.log(`Div: ${firstOperand} / ${secondOperand} = ${firstOperand / secondOperand}`);
 
 // Alert result
 resultString+= `Sum: ${firstOperand} + ${secondOperand} = ${firstOperand + secondOperand}\n`
