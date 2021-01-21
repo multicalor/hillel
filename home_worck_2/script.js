@@ -12,25 +12,14 @@ let resultString = 'Calculations are finished!\n'
 // Mult: 2 * 2 = 4
 // Div: 2 / 2 = 1
 
-
-// Console result
-
-console.log("Calculations are finished!");
-// Sum
-console.log(`Sum: ${firstOperand} + ${secondOperand} = ${firstOperand + secondOperand}`);
-// Diff
-console.log(`Diff: ${firstOperand} - ${secondOperand} = ${firstOperand - secondOperand}`);
-// Mult
-console.log(`Mult: ${firstOperand} * ${secondOperand} = ${firstOperand * secondOperand}`);
-// Div
-console.log(`Div: ${firstOperand} / ${secondOperand} = ${firstOperand / secondOperand}`);
-
-// Alert result
 resultString+= `Sum: ${firstOperand} + ${secondOperand} = ${firstOperand + secondOperand}\n`
 resultString+= `Diff: ${firstOperand} - ${secondOperand} = ${firstOperand - secondOperand}\n`
 resultString+= `Mult: ${firstOperand} * ${secondOperand} = ${firstOperand * secondOperand}\n`
 resultString+= `Div: ${firstOperand} / ${secondOperand} = ${firstOperand / secondOperand}`
 
+// Console result
+console.log(resultString);
+// Alert result
 alert(resultString);
 
 
