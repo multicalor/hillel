@@ -25,6 +25,7 @@ console.log(`Sum: ${firstOperand} * ${secondOperand} = ${firstOperand * secondOp
 // Div
 console.log(`Sum: ${firstOperand} / ${secondOperand} = ${firstOperand / secondOperand}`);
 
+// Alert result
 resultString+= `Sum: ${firstOperand} + ${secondOperand} = ${firstOperand + secondOperand}\n`
 resultString+= `Diff: ${firstOperand} - ${secondOperand} = ${firstOperand - secondOperand}\n`
 resultString+= `Mult: ${firstOperand} * ${secondOperand} = ${firstOperand * secondOperand}\n`
