@@ -3,7 +3,7 @@ let log = [];
 function promptCalc(log) {
   let result;
   let operation;
-  const operations = ["sin", "+", "-", "*", "/", "log", "exit"];
+  const operations = ["sin", "+", "-", "*", "/", "history", "exit"];
   let firstOperand;
   let secondOperand;
   let trigger;
@@ -46,7 +46,7 @@ function promptCalc(log) {
 
     if (operation === "exit") {
       exit = !exit;
-    } else if (operation === "log") {
+    } else if (operation === "history") {
       log.forEach((elem) => {
         logString += `${elem}\n`;
       });
@@ -76,7 +76,7 @@ function promptCalc(log) {
 // Calc options
 function calcFunctions(operation, firstOperand, secondOperand) {
   switch (operation) {
-    case "log":
+    case "history":
       renderLog(logString);
       break;
     case "+":
