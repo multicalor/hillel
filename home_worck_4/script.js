@@ -1,10 +1,11 @@
-function promptCalc() {
+let log = [];
+
+function promptCalc(log) {
   let result;
   let operation;
   const operations = ["sin", "+", "-", "*", "/", "log", "exit"];
   let firstOperand;
   let secondOperand;
-  let log = [];
   let trigger;
   let logString = "";
   let exit = true;
@@ -142,9 +143,7 @@ function renderLog(logString) {
 }
 }
 
-
-// let divs = document.getElementsByTagName('div');
 const startCalc = document.getElementsByTagName('button')
 console.log(startCalc)
 
-startCalc[0].addEventListener('click', () => promptCalc())
+startCalc[0].addEventListener('click', () => promptCalc(log))
