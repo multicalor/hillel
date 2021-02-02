@@ -1,7 +1,7 @@
 function promptCalc() {
   let result;
   let operation;
-  const operations = ["sin", "sum", "diff", "mult", "div", "log", "exit"];
+  const operations = ["sin", "+", "-", "*", "/", "log", "exit"];
   let firstOperand;
   let secondOperand;
   let log = [];
@@ -50,11 +50,15 @@ function promptCalc() {
         logString += `${elem}\n`;
       });
       calcFunctions(operation, firstOperand);
-    } else if (operation === "sin") {
+
+    } else if (operation === "sin") { //
+
       do {
         firstOperand = Number(prompt("Enter operand"));
       } while (isNaN(firstOperand));
+
       calcFunctions(operation, firstOperand);
+
     } else {
       do {
         firstOperand = Number(prompt("Enter first operand"));
@@ -74,7 +78,7 @@ function calcFunctions(operation, firstOperand, secondOperand) {
     case "log":
       renderLog(logString);
       break;
-    case "sum":
+    case "+":
       result = `Sum: ${firstOperand} + ${secondOperand} = ${math(
         firstOperand,
         secondOperand,
@@ -82,7 +86,7 @@ function calcFunctions(operation, firstOperand, secondOperand) {
       )}`;
       render(result);
       break;
-    case "diff":
+    case "-":
       result = `Diff: ${firstOperand} - ${secondOperand} = ${math(
         firstOperand,
         secondOperand,
@@ -91,7 +95,7 @@ function calcFunctions(operation, firstOperand, secondOperand) {
       render(result);
       break;
 
-    case "mult":
+    case "*":
       result = `Mult: ${firstOperand} * ${secondOperand} = ${math(
         firstOperand,
         secondOperand,
@@ -99,7 +103,7 @@ function calcFunctions(operation, firstOperand, secondOperand) {
       )}`;
       render(result);
       break;
-    case "div":
+    case "/":
       result = `Div: ${firstOperand} / ${secondOperand} = ${math(
         firstOperand,
         secondOperand,
@@ -110,6 +114,7 @@ function calcFunctions(operation, firstOperand, secondOperand) {
     case "sin":
       result = `Sin: ${sin(firstOperand)}`;
       render(result);
+      break;
     case "exit":
       exit = !exit;
       break;
