@@ -13,3 +13,10 @@ h2 {
   margin: 2% 0% 0% 20%;
   padding: auto auto;
 }
+
+button {
+  display: block;
+  margin: auto auto;
+  padding: 6% 12%;
+  font-size: 4rem;
+}
