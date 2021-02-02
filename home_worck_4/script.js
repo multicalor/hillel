@@ -38,10 +38,8 @@ function promptCalc(log) {
   alert("Hello!");
   do {
     do {
-      operation = prompt("Enter type of operation or 'exit'");
-      console.log(operation);
-      trigger = operations.includes(operation.toLowerCase());
-      console.log(trigger);
+      operation = (prompt("Enter type of operation or 'exit'")).toLowerCase();
+      trigger = operations.includes(operation);
     } while (!trigger);
 
     if (operation === "exit") {
@@ -144,6 +142,5 @@ function renderLog(logString) {
 }
 
 const startCalc = document.getElementsByTagName('button')
-console.log(startCalc)
 
 startCalc[0].addEventListener('click', () => promptCalc(log))
