@@ -142,4 +142,9 @@ function renderLog(logString) {
 }
 }
 
-promptCalc()
+
+// let divs = document.getElementsByTagName('div');
+const startCalc = document.getElementsByTagName('button')
+console.log(startCalc)
+
+startCalc[0].addEventListener('click', () => promptCalc())
