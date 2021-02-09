@@ -108,9 +108,11 @@ function nth(num, list, count = 0) {
   }
 }
 
-let objOne = { wewe: "dfdf", fdsfdsf: { wewe: "dfdf", fdsfdsf: "dfdfsg" } };
-let objOns = { wewe: "dfdf", fdsfdsf: { wewe: "dfdf", fdsfdsf: "dfdfs" } };
+let objOne = { wewe: "dfdf", fdsfdsf: { wewe: NaN, fdsfdsf: ()=> 'dd' } };
+let objOns = { wewe: "dfdf", fdsfdsf: { wewe: NaN, fdsfdsf: ()=> 'dd' } };
 console.log("should be true 11111", deepEqual(objOne, objOns)); //problem
+console.log("should be true", deepEqual(NaN, NaN)); //problem
+console.log('dddd', isNaN({ wewe: "dfdf", fdsfdsf: { wewe: "dfdf", fdsfdsf: "dfdfs" } }))
 
 function deepEqual(a, b) {
   if (
@@ -119,7 +121,16 @@ function deepEqual(a, b) {
     typeof b !== "object" ||
     b === null
   ) {
-    return a === b;
+    if((isNaN(a) && isNaN(b) && typeof a === 'number' && typeof b === 'number')) {
+      return (isNaN(a) && isNaN(b))
+    }
+    if(( typeof a === 'function' && typeof b === 'function')) {
+      return (a.toString() === b.toString())
+    }
+    if(( typeof a === 'undefined' && typeof b === 'undefined')){
+      return true
+    }
+    return (a === b);
   } else {
     let result;
     let aKeys = Object.keys(a);
@@ -129,6 +140,7 @@ function deepEqual(a, b) {
     for (let i = 0; i < aKeys.length; i++) {
       if (aKeys[i] !== bKeys[i]) return false;
       result = deepEqual(a[aKeys[i]], b[bKeys[i]]);
+      if (!result) return false
     }
     return result;
   }
