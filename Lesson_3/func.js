@@ -1,5 +1,3 @@
-
-
 function someFunction(arg) {
   if (typeof arg === "number") {
     alert("I expected a string");
@@ -15,7 +13,6 @@ const sum = function (a, b) {
 const math = function (a, b, option) {
   return option(a, b);
 };
-
 
 function isEven(num) {
   if (num == 1) {
@@ -111,38 +108,37 @@ function nth(num, list, count = 0) {
   }
 }
 
-function deepEqual (a, b) {
+let objOne = { wewe: "dfdf", fdsfdsf: { wewe: "dfdf", fdsfdsf: "dfdfsg" } };
+let objOns = { wewe: "dfdf", fdsfdsf: { wewe: "dfdf", fdsfdsf: "dfdfs" } };
+console.log("should be true 11111", deepEqual(objOne, objOns)); //problem
 
-  if(typeof a !== 'object' || a === null || typeof b !== 'object' || b === null){
-    return (a === b)
-  }
-  else {
- 
+function deepEqual(a, b) {
+  if (
+    typeof a !== "object" ||
+    a === null ||
+    typeof b !== "object" ||
+    b === null
+  ) {
+    return a === b;
+  } else {
+    let result;
     let aKeys = Object.keys(a);
     let bKeys = Object.keys(b);
 
     if (aKeys.length !== bKeys.length) return false;
     for (let i = 0; i < aKeys.length; i++) {
-      if(aKeys[i] !== bKeys[i]) return false
-      return deepEqual(a[aKeys[i]], b[bKeys[i]]);
+      if (aKeys[i] !== bKeys[i]) return false;
+      result = deepEqual(a[aKeys[i]], b[bKeys[i]]);
     }
+    return result;
   }
 }
 
-
-
-
-
-
-
-
 // console.log(nth(78, list))
-
 
 // console.log(list);
 // console.log(list2);
 // console.log(objOne2.prototype.toString)
-
 
 // function deepEqual(dataOne, dataTwo) {
 //   if (dataOne === dataTwo) {
@@ -186,12 +182,10 @@ function deepEqual (a, b) {
 //   // Проверка на null
 //   if (a === null || b === null) {
 //     if (a === b) return true;
-    
-    
-    
+
 //     else return false;
 //   } else if (a === b) return true;
-//   if (!(typeof a === "object" || b === "object") 
+//   if (!(typeof a === "object" || b === "object")
 //   ) {
 //     return a === b;
 //   }
@@ -228,11 +222,9 @@ function deepEqual (a, b) {
 //         b[bKeys[i]] !== null
 //       )) return false
 //       if (a[aKeys[i]] !==  b[bKeys[i]]) return false;
-//       if (a[aKeys[i]] ===  b[bKeys[i]]) return true; // 
+//       if (a[aKeys[i]] ===  b[bKeys[i]]) return true; //
 //     }
 //   }
-
-
 
 //   } else return false;
 // }
@@ -265,7 +257,7 @@ function deepEqual (a, b) {
 //         b[bKeys[i]] !== null
 //       )) return false
 //       if (a[aKeys[i]] !==  b[bKeys[i]]) return false;
-      
+
 //       if (a[aKeys[i]] ===  b[bKeys[i]]) return true;
 //     }
 //   }
@@ -273,7 +265,6 @@ function deepEqual (a, b) {
 
 // let one = { 'null': 'null', 'null': { 'null': 'null' } ,  'null': 'null', 'null': { 'null': 'null' } , 'dfdf':'dsd'}
 // let two = { 'null': 'null', 'null': { 'null': 'null' } ,  'null': 'null', 'null': { 'null': 'null' } };
-
 
 // console.log("1", deepEqual(one, two));
 // console.log("2", deepEqualObj(objOne, objOns));
@@ -289,15 +280,16 @@ function deepEqual (a, b) {
 // console.log("12", deepEqual(objOne, objOne2));
 // console.log("13", deepEqual(objOne, objOns));
 
-
-
-
-// let list = arrayToList(arr);
-// let list2 = arrayToList(arrTwo);
+let arr = range(1, 10);
+let arr1 = range(1, 32);
+let arrTwo = range(1, 34);
+let list = arrayToList(arr);
+let list2 = arrayToList(arrTwo);
+let one = arrayToList(arrTwo);
 
 // console.log('should be false', deepEqual('fdfd', 'fsfdf'))
 
-// console.log('should be true', deepEqual('fdfd', 'fdfd')) 
+// console.log('should be true', deepEqual('fdfd', 'fdfd'))
 
 // console.log('should be false', deepEqual(5, 4))
 
@@ -311,22 +303,20 @@ function deepEqual (a, b) {
 
 // console.log('should be false',  deepEqual({}, 4))
 // console.log('should be false', deepEqual({'dfdf':'fdfsdf', 'fdfdf':'fsdfs'}, [1,2,3]))
-// console.log('should be true', deepEqual(one, one)) 
+// console.log('should be true', deepEqual(one, one))
 
-// let objOne = { 'wewe': "dfdf", 'fdsfdsf': { 'wewe': "dfdf", 'fdsfdsf': "dfdfs" } };
-// let objOns = { 'wewe': "dfdf", 'fdsfdsf': { 'wewe': "dfdf", 'fdsfdsf': "dfdfs" } }; 
 // console.log(`{ 'wewe': "dfdf", 'fdsfdsf': { 'wewe': "dfdf", 'fdsfdsf': "dfdfs" } }` === `{ 'wewe': "dfdf", 'fdsfdsf': { 'wewe': "dfdf", 'fdsfdsf': "dfdfs" } }`)
 // let objOne2 = { 'dwewe': "dfdf", 'fdsfdsf': "dfdfsr" };
 
-// console.log('should be true', deepEqual(objOne, objOns)) //problem
 // console.log('should be false', deepEqual(objOne, objOne2))// problem (should be false)
 
-// arr = range(1, 201);
-// arr2 = range(1, 200);
+arr = range(1, 201);
+arr2 = range(1, 200);
 
 // console.log('should be false', deepEqual([1, 3, 4, 5, 6], [1, 3, 4, 5, 6, 8]))// (should be false)
 // console.log(listToArray(arrayToList(arr)))
 
+// console.log(deepEqual(Math, Math))
 // null.
 // undefined.
 // boolean.
